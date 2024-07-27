@@ -7,6 +7,7 @@ import { ProfileDetails } from "./pages/ProfileDetails";
 import TrainerRegistrationForm from "./pages/TrainerRegistrationForm";
 import AdminDashboard from "./pages/AdminDashboard";
 import CreateEvent from "./pages/CreateEvent";
+import AssignEvents from "./pages/AssignEvents";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/trainerregistration" element={<TrainerRegistrationForm/>} />
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/createevent" element={<CreateEvent />} />
+        <Route path = "/assign-events" element = {<AssignEvents/>}/>
       </Routes>
     </div>
   );
