@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import './Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isTrainer = location.state?.isTrainer ?? true; // Default to true if not provided
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -14,7 +15,14 @@ const Login = () => {
     e.preventDefault();
     console.log('Username:', username);
     console.log('Password:', password);
-    navigate("/event-list")
+
+    console.log(isTrainer);
+    if(isTrainer){
+      navigate("/event-list");
+    }
+    else{
+      navigate("/");
+    }
   };
 
   return (
@@ -48,9 +56,6 @@ const Login = () => {
               </div>
               <button type="submit" className="login-button mt-3">Login</button>
             </form>
-            <div className="signup-section">
-              Want to become a trainer? <a href="/signup" className="signup-link">Signup</a>
-            </div>
           </div>
         </div>
       </div>

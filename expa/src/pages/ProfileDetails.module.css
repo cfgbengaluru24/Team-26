@@ -1,0 +1,129 @@
+.box {
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: rgb(77, 77, 77); 
+  }
+  
+  .titles{
+    font-weight: 700;
+    color: rgb(77, 77, 77);
+    padding-top: 10px;
+  }
+  
+  .applicationDetails{
+    margin-left: 8vw;
+    width: 92vw;
+    color: rgb(77, 77, 77);
+  }
+  hr{
+    width: 90%;
+  }
+  
+  p{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .button9 {
+    background-color: #2f7eec;
+    border-radius: 6px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 0 10px;
+  
+  }
+  .button10 {
+    background-color: #10b33b;
+    border-radius: 6px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 0 10px;
+  
+  
+  }
+  
+  .button11 {
+    background-color: #f42323;
+    border-radius: 6px;
+    border-width: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 100%;
+    height: 44px;
+    line-height: 1.15;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 0 10px;
+  }
+  
+  .allButtons{
+    display:flex;
+    flex-direction:row; 
+    justify-content:space-between; 
+    width:100%; 
+    height: 100%;
+    max-width: 0 70%;
+    margin-top: 10px;
+  }
+  
+  .button11:hover{
+    border: 1px solid black ;
+  }
+  .button10:hover{
+    border: 1px solid black ;
+  }
+  .button9:hover{
+    border: 1px solid black ;
+  }
+  
+  @media only screen and (max-width:768px){
+    .box{
+      margin-top: 10%;
+    }
+    hr{
+      width:100%;
+    }
+    .applicationDetails{
+      margin-left : 10vw !important;
+      margin-right : 10vw !important;
+      width: 80vw;
+    }
+    .button9, .button10, .button11{
+      margin: 10px 0;
+    }
+    .allButtons{
+      display:flex;
+      flex-direction:column ; 
+      justify-content:space-between; 
+      width:100%; 
+      height: 100%;
+      max-width:70%;
+      margin-top: 10px;
+    }
+  }

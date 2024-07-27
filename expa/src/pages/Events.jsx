@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import EventList from './EventList';
-import styles from './Events.module.css'
+import styles from './Events.module.css';
 import JobDescSidePanel from './JobDescSidePanel';
 
 const Events = () => {
@@ -17,20 +18,30 @@ const Events = () => {
     ];
 
     const [selectedJob, setSelectedJob] = useState(null);
+    const navigate = useNavigate();
 
     const handleClick = (event) => {
         setSelectedJob(event);
     };
 
+    const handleProfileClick = () => {
+        navigate('/profile-details'); // Adjust the path according to your route configuration
+    };
+
     return (
-        <div className={styles.event}>
-            <EventList 
-                eventItems={eventItems} 
-                onClick={handleClick} 
-                selectedJob={selectedJob} 
-            />
-            <JobDescSidePanel selectedJob={selectedJob} />
-        </div>
+        <>
+            <div className={styles.header}>
+                <button className={styles.profileButton} onClick={handleProfileClick}>Profile</button>
+            </div>
+            <div className={styles.event}>
+                <EventList 
+                    eventItems={eventItems} 
+                    onClick={handleClick} 
+                    selectedJob={selectedJob} 
+                />
+                <JobDescSidePanel selectedJob={selectedJob} />
+            </div>
+        </>
     );
 };
 
