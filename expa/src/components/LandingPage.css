@@ -1,6 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .landing-page {
   text-align: center;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .landing-header {
@@ -13,7 +20,7 @@
   max-width: 100%; 
   height: auto;
   max-height: 300px; 
-  object-fit: cover; 
+  object-fit: cover;
 }
 
 .landing-content {
@@ -21,12 +28,12 @@
 }
 
 .landing-content h2 {
-  margin-top: 1rem; /* Move the header up a bit */
-  font-size: 2rem; /* Adjust header font size as needed */
+  margin-top: 1rem; 
+  font-size: 2rem; 
 }
 
 .landing-content p {
   margin-top: 1rem;
-  font-size: 1.5rem; /* Increase paragraph font size */
-  line-height: 1.6; /* Optional: Adjust line height for better readability */
+  font-size: 1.5rem; 
+  line-height: 1.6; 
 }
