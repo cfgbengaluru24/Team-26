@@ -1,8 +1,9 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const TrainerSchema = new Schema({
     name: { type: String, required: true },
+    userName:{type:String,required: true ,unique:true},
     email: { type: String, required: true, unique: true },
     dob: { type: Date, required: true },
     location: { type: String, required: true },
@@ -24,4 +25,4 @@ const TrainerSchema = new Schema({
 
 const Trainer = mongoose.model('Trainer', TrainerSchema);
 
-module.exports = Trainer;
+export default Trainer;
