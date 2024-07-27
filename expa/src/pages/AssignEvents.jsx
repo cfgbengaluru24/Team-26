@@ -9,17 +9,17 @@ const AssignEvents = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [events, setEvents] = useState([]);
 
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await axios.get(`http://localhost:5000/events?date=${selectedDate.toISOString().split('T')[0]}`);
-        setEvents(response.data);
-      } catch (error) {
-        console.error('Error fetching events:', error);
-      }
-    };
+  const fetchEvents = async (date) => {
+    try {
+      const response = await axios.post('http://localhost:5000/event/fetchEvents', { date });
+      setEvents(response.data);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+    }
+  };
 
-    fetchEvents();
+  useEffect(() => {
+    fetchEvents(selectedDate.toISOString().split('T')[0]);
   }, [selectedDate]);
 
   return (
