@@ -1,0 +1,88 @@
+.box {
+    flex: 1.5;
+    position: sticky;
+    top: 15vh;
+    background-color: white;
+    border: 1px solid #5f909f;
+    margin-left: 10px; /* Adjusted margin to create space on the left */
+    margin-right: 0; /* Optional: Adjusted margin if needed */
+    border-radius: 15px;
+    height: min-content;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 2vw 1vw; /* Adjusted padding */
+  }
+  
+  .loadingSpinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1vh 2vw; /* Adjusted padding */
+    transition: 300ms;
+  }
+  
+  .panel {
+    padding: 1vw 2vw; /* Adjusted padding */
+    transition: 300ms;
+  }
+  
+  .jobDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .jobTitle {
+    font-size: calc(16px + 1.5vw);
+    font-weight: 500;
+  }
+  
+  .jobCompany {
+    font-size: calc(16px + 0.5vw);
+    color: #113e4d;
+  }
+  
+  .jobLocation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: calc(16px + 0.5vw);
+    color: gray;
+    padding: 5px 0;
+  }
+  
+  .applyButton {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 30px;
+    background-color: #18408e;
+    color: white;
+    width: calc(16px + 10vw);
+    height: calc(16px + 4vh);
+    font-size: calc(16px + 0.5vw);
+    outline: none;
+    margin: 5px 0; /* Reduced margin */
+  }
+  
+  .applyButton:disabled {
+    background-color: gray;
+    color: white;
+  }
+  
+  .jobDesc {
+    font-size: calc(16px + 0.3vw);
+  }
+  
+  @media only screen and (max-width:768px) {
+    .box {
+      border: none;
+      margin-left: 0; /* Adjusted for mobile view */
+      margin-right: 0; /* Removed margin for mobile view */
+    }
+    .applyButton {
+      width: 100%;
+    }
+  }
+  

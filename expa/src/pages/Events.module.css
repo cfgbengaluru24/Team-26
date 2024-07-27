@@ -1,0 +1,8 @@
+/* Events.module.css */
+.event {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Adjust this value to control the spacing */
+    margin: 0 13vw; /* Ensure there are no extra margins */
+    padding: 0; /* Ensure there are no extra paddings */
+}
