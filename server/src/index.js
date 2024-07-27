@@ -123,4 +123,4 @@ async function assignTrainersToEvents(date) {
   }
 }
 const d = new Date(2024, 6, 28);
-assignTrainersToEvents(d);
+// assignTrainersToEvents(d);
