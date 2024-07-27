@@ -1,0 +1,101 @@
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff; /* White background */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white; /* Changed text color to black */
+  }
+  
+  .profile-menu {
+    position: relative;
+  }
+  
+  .profile-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: black; /* Changed icon color to black */
+  }
+  
+  .profile-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sidebar {
+    width: 150px; /* Reduced width from 200px to 150px */
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  .sidebar-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: red; /* Changed background color to red */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sidebar-btn:hover {
+    background-color: #b30000; /* Darker red on hover */
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .event-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-event-btn {
+    align-self: flex-start;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .create-event-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
