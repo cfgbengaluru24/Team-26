@@ -15,7 +15,7 @@ const EventList = (props) => {
       {eventItems ? eventItems.map((e) => {
         if (!isMobileScreen)
           return (
-            <div  className={ `${styles.jobTile} ${styles.selected}`}>
+            <div onClick={() => props.onClick(e)}  className={e != props.selectedJob ? `${styles.jobTile}` : `${styles.jobTile} ${styles.selected}`}>
               <img src={cadet} style={{ height: "10vh", objectFit: "contain", aspectRatio: "1/1", marginRight: "20px" }} />
               <div style={{ flex: 3, display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "space-evenly", width: "50%" }}>
