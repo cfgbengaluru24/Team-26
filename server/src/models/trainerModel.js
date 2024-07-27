@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const TrainerSchema = new Schema({
@@ -23,7 +22,6 @@ const TrainerSchema = new Schema({
     },
   ],
   Assigned: { type: Boolean },
-  Experience: { type: Number },
   Experience: { type: Number },
 });
 
