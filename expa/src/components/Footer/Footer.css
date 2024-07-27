@@ -1,0 +1,14 @@
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    justify-content: center; 
+  }
+  
+  .footer-image {
+    width: 100%;
+    max-width: 2000px; 
+    height: auto;
+  }
+  
