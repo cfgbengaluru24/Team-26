@@ -5,5 +5,5 @@ dotenv.config();
 const app = express();
 
 mongoose.connect(process.env.MONGOPASSWORD).then(() => {
-  console.log("cpnneted");
+  console.log("conneted");
 });
