@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { createEvents,getAllEvents } from "./routes/eventcontroller.js";
+// import { createEvents,getAllEvents } from "./routes/eventcontroller.js";
+import { eventRouter } from "./routes/eventcontroller.js";
 dotenv.config();
 const app = express();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 
@@ -17,13 +18,15 @@ app.use(bodyParser.json({extended:true}));
 app.use(bodyParser.urlencoded({extended:true}));
 // app.use('/', Router);
 
-app.get('/',(req,res)=>{
-  console.log("admin page and the trainer logoin page");
-  res.send("admin apeg and login pageeee")
-})
+// app.get('/',(req,res)=>{
+//   console.log("admin page and the trainer logoin page");
+//   res.send("admin apeg and login pageeee")
+// })
 
-app.post('/createevent',createEvents);
-app.get('/getevents',getAllEvents);
+// app.post('/createevent',createEvents);
+// app.get('/getevents',getAllEvents);
+
+app.use('/event',eventRouter);
 
 const PORT = 5000;
 
