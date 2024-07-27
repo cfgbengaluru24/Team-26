@@ -4,16 +4,12 @@ const Schema = mongoose.Schema;
 const EventSchema = new Schema({
   location: { type: String, required: true },
   date: { type: Date, required: true },
-  numberOfTrainees: { type: Number, required: true },
+  numberOfTrainers: { type: Number, required: true },
   experienceLevel: { type: Integer },
   SignUps: [
     {
-      objectId: "volunteer1",
-      experience: 5,
-    },
-    {
-      objectId: "volunteer2",
-      experience: 3,
+      name: "String",
+      experience: Integer,
     },
   ],
 });
