@@ -1,12 +1,14 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const TrainerSchema = new Schema({
   name: { type: String, required: true },
+  password: { type: String },
+  username: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   dob: { type: Date, required: true },
   location: { type: String, required: true },
-  languagesKnown: { type: [String], required: true },
+  languagesKnown: [{ type: String }],
   upcomingEvents: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -20,9 +22,9 @@ const TrainerSchema = new Schema({
     },
   ],
   Assigned: { type: Boolean },
-  Experience: { type: Integer },
+  Experience: { type: Number },
 });
 
 const Trainer = mongoose.model("Trainer", TrainerSchema);
 
-module.exports = Trainer;
+export default Trainer;

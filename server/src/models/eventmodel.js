@@ -1,19 +1,20 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const EventSchema = new Schema({
-  location: { type: String, required: true },
-  date: { type: Date, required: true },
-  numberOfTrainers: { type: Number, required: true },
-  experienceLevel: { type: Integer },
+  location: { type: String },
+  date: { type: Date },
+  numberOfTrainers: { type: Number },
+  experienceLevel: { type: Number },
   SignUps: [
     {
       name: "String",
-      experience: Integer,
+      experience: Number,
     },
   ],
+  assignedTrainers: [{ name: "String" }],
 });
 
 const Event = mongoose.model("Event", EventSchema);
-
-module.exports = Event;
+export default Event;
+// module.exports = Event;
