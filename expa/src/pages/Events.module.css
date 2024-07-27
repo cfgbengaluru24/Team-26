@@ -1,8 +1,28 @@
-/* Events.module.css */
 .event {
     display: flex;
     flex-direction: row;
     gap: 10px; /* Adjust this value to control the spacing */
     margin: 0 13vw; /* Ensure there are no extra margins */
     padding: 0; /* Ensure there are no extra paddings */
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    margin: 10px 13vw; /* Same margin as .event to align with the content */
+}
+
+.profileButton {
+    background-color: #18408e;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.profileButton:hover {
+    background-color: #0f306c;
 }
