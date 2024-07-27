@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import './Login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -10,6 +14,7 @@ const Login = () => {
     e.preventDefault();
     console.log('Username:', username);
     console.log('Password:', password);
+    navigate("/event-list")
   };
 
   return (
