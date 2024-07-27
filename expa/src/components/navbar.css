@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem;  
-  background-color: #333;
+  padding: 0.3rem;  
+  background-color: darkblue;
   color: white;
 }
 
@@ -17,8 +17,28 @@
   height: 30px;  
 }
 
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
 .navbar-links a {
   margin-left: 0.5rem;  
   font-size: 1rem;      
   padding: 0.25rem;     
+}
+
+.navbar-links .login-button {
+  padding: 0.5rem 1rem; /* Increase padding to make the button larger */
+  margin-left: 0.75rem; /* Add margin to shift it to the left */
+  font-size: 1.2rem;   /* Increase font size for better visibility */
+  border: none;        /* Remove border if necessary */
+  border-radius: 4px; /* Optional: Add rounded corners */
+  background-color: red; /* Optional: Set background color */
+  color: white;       /* Text color */
+  text-align: center; /* Center the text */
+}
+
+.navbar-links .login-button:hover {
+  background-color: #0056b3; /* Darker background on hover */
 }
