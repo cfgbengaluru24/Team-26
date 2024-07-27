@@ -27,4 +27,4 @@ const TrainerSchema = new Schema({
 
 export const TrainerModel = mongoose.model("Trainer", TrainerSchema);
 
-export default Trainer;
+export default TrainerModel;

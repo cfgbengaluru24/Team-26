@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const EventSchema = new Schema({
+  name: { type: String },
   location: { type: String },
   date: { type: Date },
   numberOfTrainers: { type: Number },
@@ -16,6 +16,6 @@ const EventSchema = new Schema({
   assignedTrainers: [{ name: "String" }],
 });
 
-const Event = mongoose.model("Event", EventSchema);
-export default Event;
+const EventModel = mongoose.model("Event", EventSchema);
+export default EventModel;
 // module.exports = Event;

@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGOPASSWORD).then(() => {
   console.log("conneted");
 });
 app.use("/login", authRouter);
-app.use("/events", eventRouter);
+app.use("/event", eventRouter);
 // app.use('/', Router);
 
 const PORT = 5000;

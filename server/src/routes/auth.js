@@ -13,11 +13,12 @@ router.get("/", (req, res) => {
 router.post("/", async (req, res) => {
   const { username, password } = req.body;
 
-  const user = await AdminModel.findOne({ username });
+  var user = await AdminModel.findOne({ username });
   let role = "admin";
   if (!user) {
     // Check if user is a trainer
-    user = await TrainerModel.findOne({ username });
+    user = await TrainerModel.findOne({ username: username });
+    console.log(user);
     role = "trainer";
   }
 
@@ -25,10 +26,10 @@ router.post("/", async (req, res) => {
     return res.status(404).json({ message: "User Doesnt Exist!" });
   }
 
-  const hashedpassword = await bcrypt.hash(password, 10);
+  //   const hashedpassword = await bcrypt.hash(password, 10);
 
-  const isPasswordValid = await bcrypt.compare(password, user.password);
-
+  //   const isPasswordValid = await bcrypt.compare(password, user.password);
+  const isPasswordValid = user.password === password;
   if (!isPasswordValid) {
     return res.status(404).json({ message: "Incorrect password!" });
   }
