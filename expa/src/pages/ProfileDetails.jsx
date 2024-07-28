@@ -1,29 +1,59 @@
 import styles from './ProfileDetails.module.css';
-import { CircularProgress, LinearProgress, Snackbar } from '@mui/material';
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { Feed } from '@mui/icons-material';
+import { CircularProgress, Snackbar } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export const ProfileDetails = (props) => {
+  const [trainer, setTrainer] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const trainer = 
-    {
-      _id: "63f5d5d2f26a4d7b5c9e7d6b",
-      name: "Shra",
-      email: "shra@example.com",
-      dob: "1933-11-22T00:00:00.000Z",
-      location: "New York",
-      languagesKnown: ["English", "Spanish"],
-      upcomingEvents: [
-        { _id: "64d5f0e4e4f01b5c9d19f9e1", name: "BootCamp 1" },
-        { _id: "64d5f0e4e4f01b5c9d19f9e2", name: "BootCamp 2" }
-      ],
-      completedEvents: [
-        { _id: "64d5f0e4e4f01b5c9d19f9e3", name: "BootCamp 3" }
-      ],
-      Assigned: true,
-      Experience: 5
+  const handleTravelRequest = async (trainerId, eventId) => {
+    try {
+      const response = await axios.post('http://localhost:5000/request/approve', {
+        trainerId,
+        eventId
+      });
+    } catch (error) {
+      console.log(error.data)
+    }
+  };
+
+  useEffect(() => {
+    const fetchTrainerDetails = async () => {
+      const userId = window.localStorage.getItem('user');
+      // const userId = "66a514570e88732e10029422";
+
+      if (!userId) {
+        setError('User ID not found in local storage');
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const response = await axios.get(`http://localhost:5000/trainer/${userId}`);
+        setTrainer(response.data);
+      } catch (error) {
+        setError('Failed to fetch trainer details');
+      } finally {
+        setLoading(false);
+      }
     };
+
+    fetchTrainerDetails();
+  }, []);
+
+  if (loading) {
+    return <CircularProgress />;
+  }
+
+  if (error) {
+    return <Snackbar open message={error} />;
+  }
+
+  if (!trainer) {
+    return <div>No trainer details available</div>;
+  }
 
   return (
     <div className={styles.box}>
@@ -55,7 +85,10 @@ export const ProfileDetails = (props) => {
           <div className={styles.titles}>Upcoming Events</div>
           <ul>
             {trainer.upcomingEvents.map((event) => (
-              <li key={event._id}>{event.name}</li>
+              <li key={event._id}>
+                {event.name}
+                <button onClick={() => handleTravelRequest(trainer._id, event._id)}>Travel Request</button>
+              </li>
             ))}
           </ul>
         </div>

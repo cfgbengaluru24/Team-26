@@ -24,7 +24,7 @@ const Login = () => {
       console.log(response);
       localStorage.setItem("user", response.data.userId);
       console.log(isTrainer);
-      if (response.role === "trainer") {
+      if (response.data.role === "trainer") {
         navigate("/event-list");
       } else {
         navigate("/admin");
