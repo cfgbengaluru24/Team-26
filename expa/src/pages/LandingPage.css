@@ -1,0 +1,39 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.landing-page {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.landing-header {
+  padding: 0; 
+  background-color: #f8f9fa;
+}
+
+.landing-banner {
+  width: 100%;
+  max-width: 100%; 
+  height: auto;
+  max-height: 300px; 
+  object-fit: cover;
+}
+
+.landing-content {
+  padding: 2rem;
+}
+
+.landing-content h2 {
+  margin-top: 1rem; 
+  font-size: 2rem; 
+}
+
+.landing-content p {
+  margin-top: 1rem;
+  font-size: 1.5rem; 
+  line-height: 1.6; 
+}
